@@ -78,6 +78,7 @@ public class KolmeDbContext : DbContext
             new Entities.Document { Id = 3, Title = "Document3" }
         );
 
+
         var user1 = new Entities.User
         {
             Id = 1,
@@ -91,6 +92,7 @@ public class KolmeDbContext : DbContext
             Username = "user2",
             PasswordHash = "AafM2hH9uXftvNzus2JY3NhbS5YQS3m0OwZqSGlcoFRmUw7fWzG0la7DrVhlLQuZgQ=="
         };
+
 
         modelBuilder.Entity<Entities.User>().HasData(user1, user2);
 
