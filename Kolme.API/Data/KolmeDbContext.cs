@@ -78,11 +78,21 @@ public class KolmeDbContext : DbContext
             new Entities.Document { Id = 3, Title = "Document3" }
         );
 
-        var hasher = new PasswordHasher<Entities.User>();
-        var user1 = new Entities.User { Id = 1, Username = "user1" };
-        user1.PasswordHash = hasher.HashPassword(user1, "Password1!");
-        var user2 = new Entities.User { Id = 2, Username = "user2" };
-        user2.PasswordHash = hasher.HashPassword(user2, "Password2!");
+
+        var user1 = new Entities.User
+        {
+            Id = 1,
+            Username = "user1",
+            PasswordHash = "AT/G9IR6v8qQIPHEVWXttkWvp7pe6CyX/57XTL+VWg3oTNnA6D9kfQCvy/f66zTBNg=="
+        };
+
+        var user2 = new Entities.User
+        {
+            Id = 2,
+            Username = "user2",
+            PasswordHash = "AafM2hH9uXftvNzus2JY3NhbS5YQS3m0OwZqSGlcoFRmUw7fWzG0la7DrVhlLQuZgQ=="
+        };
+
 
         modelBuilder.Entity<Entities.User>().HasData(user1, user2);
 

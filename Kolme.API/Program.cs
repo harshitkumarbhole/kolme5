@@ -1,5 +1,8 @@
 using Kolme.API.Data;
 
+using System.Linq;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

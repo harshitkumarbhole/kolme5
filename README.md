@@ -1,32 +1,22 @@
-# Kolme React Project
 
-This repository contains a basic Vite + React setup with authentication utilities and a simple employee management UI.
+# Kolme.API
 
-## Setup
+## Run Locally
 
-1. Install Node.js (v18 recommended).
-2. If starting from scratch run:
-   ```bash
-   npm create vite@latest kolme-react -- --template react
-   ```
-   Then install project dependencies:
+1. Restore packages:
+   dotnet restore
 
-```bash
-cd kolme-react
-npm install
-npm install axios react-router-dom react-toastify bootstrap classnames
-```
+2. Apply migrations & seed:
+   dotnet ef database update
 
-3. Start the development server:
+3. Run the API:
+   dotnet run
 
-```bash
-npm run dev
-```
+4. Swagger UI:
+   https://localhost:5001/swagger
 
-The app expects an API server running at `http://localhost:5000/api`.
+## EF Core
+To regenerate migrations:
+   dotnet ef migrations remove
+   dotnet ef migrations add InitialCreate
 
-To create a production build run:
-
-```bash
-npm run build
-```
